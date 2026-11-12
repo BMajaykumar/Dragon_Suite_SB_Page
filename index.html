@@ -172,11 +172,11 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
 .diff:hover,.diff:focus-visible{background:rgba(255,255,255,.1)}
 .diff .ic{font-size:22px;color:#ff9fb2}
 .diff b{font-size:15px;font-weight:600;line-height:1.3;display:block}
-.proof{display:grid;grid-template-columns:repeat(5,1fr);align-items:stretch}
-.proof div{padding:2px 14px;border-left:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;justify-content:center}
+.proof{display:flex;justify-content:space-between;align-items:stretch}
+.proof div{padding:2px 0 2px 16px;border-left:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;justify-content:center;flex:0 0 auto}
 .proof div:first-child{border:0;padding-left:0}
-.proof strong{display:block;font-size:clamp(22px,2.2vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
-.proof span{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.35;display:block;margin-top:4px}
+.proof strong{display:block;font-size:clamp(20px,2vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
+.proof span{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.35;display:block;margin-top:4px;max-width:10ch}
 
 /* explore bar */
 /* sticky band: keeps clear space between the bar and the sections scrolling beneath it */
@@ -301,7 +301,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
 .tbl td{padding:6px 8px;border-top:1px solid var(--line-2)}
 .badge{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;padding:2px 11px;border-radius:999px;white-space:nowrap}
 .b-ok{background:var(--ok-bg);color:var(--ok)}.b-warn{background:var(--warn-bg);color:var(--warn)}.b-bad{background:var(--bad-bg);color:var(--bad)}.b-info{background:var(--hub-soft);color:var(--hub)}
-.gap{display:grid;grid-template-columns:90px 1fr 30px;align-items:center;gap:10px;margin:6px 0;font-size:12.5px;color:var(--ink-2)}
+.gap{display:grid;grid-template-columns:104px 1fr 30px;align-items:center;gap:10px;margin:6px 0;font-size:12.5px;color:var(--ink-2)}
 .rank{display:grid;grid-template-columns:20px 1fr auto;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--line-2)}
 .rank.f{border:0}
 .rank .no{width:24px;height:24px;border-radius:7px;background:var(--crimson-50);color:var(--crimson);font-size:12px;font-weight:700;display:grid;place-items:center}
@@ -445,14 +445,13 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
 .ind div{padding-left:14px;border-left:2px solid rgba(255,255,255,.3)}
 .ind strong{display:block;font-size:clamp(26px,3.2vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
 .ind span{font-size:13.5px;opacity:.88}
-.cta-band{margin-top:16px;display:grid;grid-template-columns:auto 1fr 1fr;gap:16px;align-items:center;padding:18px 24px;border-radius:16px;border:1px solid var(--crimson-100);background:linear-gradient(90deg,var(--crimson-50),#fff)}
-.cta-band h3{font-size:clamp(19px,2vw,24px);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
-.sec-cta{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--line);background:#fff;border-radius:14px;transition:all .25s var(--ease);font-size:14.5px}
-.sec-cta:hover{border-color:var(--crimson);transform:translateY(-2px);box-shadow:0 12px 22px -16px rgba(179,18,46,.6)}
-.sec-cta>.ic:first-child{font-size:26px;color:var(--crimson)}
-.sec-cta small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
-.sec-cta b{font-weight:600;color:var(--ink);line-height:1.3;display:block}
-.sec-cta>.ic:last-child{margin-left:auto;color:var(--muted);font-size:15px}
+.cta-sec{text-align:center;padding:46px 40px 36px}
+.cta-sec .eyebrow{justify-content:center}
+.cta-sec h2{font-size:clamp(24px,2.8vw,34px);font-weight:600;letter-spacing:-.02em;margin:12px 0}
+.cta-sec p{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0 auto}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.back-link{display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-size:13px;color:var(--muted);transition:color .2s}
+.back-link:hover{color:var(--crimson)}
 .foot{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:20px 32px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.6);border-top:1px solid var(--line)}
 
 /* modal + toast */
@@ -489,7 +488,6 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
   .float-tag.t1{left:8px}.float-tag.t2{right:8px}
   .row-head{flex-direction:column;align-items:flex-start;gap:10px}
   .row-head p{text-align:left}
-  .cta-band{grid-template-columns:minmax(0,1fr)}
   .obar{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:1024px){
@@ -506,7 +504,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
   .hero{padding:22px 18px}
   .agentic{padding:20px 16px}
   .diffs,.cols3,.ag-lower,.ind,.found{grid-template-columns:minmax(0,1fr)}
-  .proof{grid-template-columns:repeat(3,1fr);gap:14px 0}
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 0}
   .proof div:nth-child(4){border-left:0;padding-left:0}
   .explore{padding:6px}
   .explore-wrap{margin:0 -6px;padding:6px 6px 12px}
@@ -670,7 +668,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
           <div>
             <div class="eyebrow"><span class="mark"><svg class="ic"><use href="#i-flame"/></svg></span>Dragon Suite by SNS Square</div>
             <h1 id="hero-h">Don’t write a resume. <em>Prove it.</em></h1>
-            <p class="lead">An agentic AI talent ecosystem for students and job seekers, institutions and placement teams, and recruiters and employers. From first practice question to verified hire, and it acts at every step.</p>
+            <p class="lead">Dragon Suite is an agentic AI talent ecosystem for students and job seekers, institutions and placement teams, and recruiters and employers. It takes talent from first practice question to verified hire, and acts at every step along the way.</p>
             <div class="hero-cta">
               <button class="btn btn-light" data-demo><svg class="ic"><use href="#i-calendar"/></svg>Book a demo</button>
               <a class="btn btn-ghost" href="#ecosystem">Explore the platform<svg class="ic"><use href="#i-arrow-right"/></svg></a>
@@ -681,7 +679,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
             <div class="float-tag t1"><svg class="ic"><use href="#i-shield-check"/></svg><div>Trust Score 92<small>Proctored · verified</small></div></div>
             <div class="float-tag t2"><svg class="ic"><use href="#i-award"/></svg><div>Dragon Score 86<small>Elite eligible (85+)</small></div></div>
             <div class="chatwin" aria-label="Illustrative Dragon AI conversation">
-              <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:#ff9fb2;font-size:15px"><use href="#i-sparkles"/></svg>Dragon AI<span class="live">Live</span></div>
+              <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:#ff9fb2;font-size:15px"><use href="#i-sparkles"/></svg>Dragon AI<span class="live">Sample</span></div>
               <div class="chat-body" id="heroChat"></div>
               <div class="chat-input"><svg class="ic"><use href="#i-message"/></svg>Ask Dragon AI anything…<span class="send"><svg class="ic"><use href="#i-send"/></svg></span></div>
             </div>
@@ -727,9 +725,9 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
             <h2 id="ch-h">Talent runs on tools that never talk to each other.</h2>
             <p>Everyone is working hard. Nobody is working from the same facts.</p>
             <div class="breaks">
-              <div class="brk-row"><svg class="ic"><use href="#i-cap"/></svg><b>Students &amp; job seekers</b><p>Skills are claimed, not proven. Career data is scattered. Preparation has no direction.</p></div>
-              <div class="brk-row"><svg class="ic"><use href="#i-building"/></svg><b>Institutions &amp; placement teams</b><p>Struggling students surface too late. Batch performance is hard to read before a drive.</p></div>
-              <div class="brk-row"><svg class="ic"><use href="#i-briefcase"/></svg><b>Recruiters &amp; employers</b><p>Questions leak. Generic tests ignore company context. Screening eats weeks.</p></div>
+              <div class="brk-row"><svg class="ic"><use href="#i-cap"/></svg><b>Students &amp; job seekers</b><p>Skills are claimed on a resume, not proven. Career data is scattered across dozens of platforms. Preparation has no clear direction.</p></div>
+              <div class="brk-row"><svg class="ic"><use href="#i-building"/></svg><b>Institutions &amp; placement teams</b><p>Struggling students surface too late. Batch performance is hard to read before a campus drive.</p></div>
+              <div class="brk-row"><svg class="ic"><use href="#i-briefcase"/></svg><b>Recruiters &amp; employers</b><p>Assessment questions leak. Generic tests ignore company context. Screening eats weeks.</p></div>
             </div>
             <div class="callout"><svg class="ic"><use href="#i-alert"/></svg><span>Three audiences. One shared problem: <b>no trusted signal.</b></span></div>
           </div>
@@ -776,7 +774,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
                   <div class="ringbox"><svg viewBox="0 0 46 46" width="46" height="46"><circle class="ring-bg" cx="23" cy="23" r="19"/><circle class="ring-fg" cx="23" cy="23" r="19"/></svg><b>92</b></div></div>
                 <div class="cols">
                   <div class="box"><h4><svg class="ic"><use href="#i-shield-check"/></svg>Verified credentials</h4>
-                    <div class="cert"><svg class="ic"><use href="#i-check"/></svg><div>Cloud Practitioner<small>AWS · verified</small></div></div>
+                    <div class="cert"><svg class="ic"><use href="#i-check"/></svg><div>Cloud Practitioner<small>AWS</small></div></div>
                     <div class="cert"><svg class="ic"><use href="#i-check"/></svg><div>Associate Cloud Engineer<small>Google Cloud</small></div></div>
                     <div class="cert"><svg class="ic"><use href="#i-check"/></svg><div>Azure Fundamentals<small>Microsoft Learn</small></div></div></div>
                   <div class="box"><h4><svg class="ic"><use href="#i-route"/></svg>6-month route · today</h4>
@@ -797,7 +795,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
                   <div class="box"><h4><svg class="ic"><use href="#i-bar"/></svg>Cohort skill gaps</h4>
                     <div class="gap"><span>SQL</span><div class="bar"><i style="--w:72%"></i></div><b>72</b></div>
                     <div class="gap"><span>Aptitude</span><div class="bar"><i style="--w:58%"></i></div><b>58</b></div>
-                    <div class="gap"><span>Sys. design</span><div class="bar"><i style="--w:41%"></i></div><b>41</b></div></div>
+                    <div class="gap"><span>System design</span><div class="bar"><i style="--w:41%"></i></div><b>41</b></div></div>
                   <div class="box"><h4><svg class="ic"><use href="#i-sparkles"/></svg>Recommended</h4><p style="color:var(--ink-2);line-height:1.45">Targeted boot camp, plus Dragon Prep paths for flagged students.</p></div>
                 </div>
               </div></div>
@@ -852,7 +850,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
       <section class="agentic reveal" id="agentic" aria-labelledby="a-h">
         <div class="row-head">
           <div><div class="eyebrow"><svg class="ic"><use href="#i-sparkles"/></svg>Agentic AI</div><h2 id="a-h">Ask once. Dragon AI gets it done.</h2></div>
-          <p>It knows each user’s profile, history and progress across the suite. It does not describe what could happen. It does it.</p>
+          <p>Dragon AI knows each user’s profile, history and progress across the suite. It does not describe what could happen. It does it.</p>
         </div>
 
         <div class="rtabs" role="tablist" aria-label="Choose a role" id="roleTabs">
@@ -863,7 +861,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
 
         <div class="ag-grid">
           <div class="chatwin">
-            <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:#ff9fb2;font-size:15px"><use href="#i-sparkles"/></svg><span id="agRoleLabel">Dragon AI</span><span class="live">Acting</span></div>
+            <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:#ff9fb2;font-size:15px"><use href="#i-sparkles"/></svg><span id="agRoleLabel">Dragon AI</span><span class="live">Sample</span></div>
             <div class="chat-body" id="agChat"></div>
           </div>
           <div class="loop" id="loop">
@@ -944,11 +942,19 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
             <div><strong data-count="11" data-suffix="-day">11-day</strong><span>average time-to-hire</span></div>
           </div>
         </div>
-        <div class="cta-band">
-          <div><h3>See Dragon Suite in action.</h3><button class="btn btn-primary" data-demo><svg class="ic"><use href="#i-calendar"/></svg>Book a demo</button></div>
-          <a class="sec-cta" href="#" data-demo><svg class="ic"><use href="#i-building"/></svg><span><small>For institutions</small><b>Plan your next placement season</b></span><svg class="ic"><use href="#i-arrow-right"/></svg></a>
-          <a class="sec-cta" href="#" data-demo><svg class="ic"><use href="#i-briefcase"/></svg><span><small>For enterprises</small><b>Run your first assessment campaign</b></span><svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </section>
+
+      <!-- =====================================================
+           7. CLOSING CTA (separate section)
+           ===================================================== -->
+      <section class="sec cta-sec reveal" id="cta" aria-labelledby="cta-h">
+        <div class="eyebrow">See the bigger picture</div>
+        <h2 id="cta-h">See Dragon Suite in action.</h2>
+        <p>Book a demo to see it live. Institutions can plan their next placement season, and enterprises can run their first assessment campaign.</p>
+        <div class="cta-btns">
+          <button class="btn btn-primary" data-demo>Book a demo<svg class="ic"><use href="#i-arrow-up-right"/></svg></button>
         </div>
+        <a class="back-link" href="#top">Back to overview<svg class="ic"><use href="#i-arrow-up"/></svg></a>
       </section>
 </main>
 
@@ -964,7 +970,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
     <button class="x" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
     <div id="mForm">
       <h3 id="m-h">Book a Dragon Suite demo</h3>
-      <p>Tell us a little about you and we’ll set up a walkthrough.</p>
+      <p>Tell us a little about yourself and we’ll set up a walkthrough.</p>
       <form novalidate id="demoForm">
         <div class="field"><label for="f-name">Full name</label><input id="f-name" required autocomplete="name"><span class="err">Please enter your name.</span></div>
         <div class="field"><label for="f-mail">Work email</label><input id="f-mail" type="email" required autocomplete="email"><span class="err">Please enter a valid email address.</span></div>
@@ -1132,7 +1138,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
      ========================================================= */
   const MODS = {
     gps:{n:'Dragon GPS',i:'compass',d:'Live 3, 6 or 12-month career route that reroutes as you progress and as the market shifts.'},
-    prep:{n:'Dragon Prep',i:'book',d:'Practice across 10 exam streams and CS tracks, including training against a named company’s hiring needs.'},
+    prep:{n:'Dragon Prep',i:'book',d:'Practise across 10 exam streams and CS tracks, including training against a named company’s hiring needs.'},
     quest:{n:'Dragon Quest',i:'flag',d:'Streaks and rewards that keep preparation motivating.'},
     skillcraft:{n:'Skill Craft',i:'wrench',d:'Skill-building guided by which certifications carry demand and salary growth.'},
     projectlab:{n:'Project Lab',i:'flask',d:'Ship real projects that recruiters can see.'},
@@ -1142,7 +1148,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
     review:{n:'Dragon Review',i:'clipboard',d:'Score breakdowns, benchmarks and proctor reports for candidates, placement teams and recruiters.'},
     hire:{n:'Dragon Hire',i:'briefcase',d:'Unique, company-calibrated assessments with 7-layer proctoring and configurable trust thresholds.'},
     hub:{n:'Dragon Hub',i:'grid',d:'One AI-ranked job feed from 50+ platforms.'},
-    elite:{n:'Dragon Elite',i:'gem',d:'Premium access for talent with a Dragon Score of 85+.'},
+    elite:{n:'Dragon Elite',i:'gem',d:'For talent who qualify with a Dragon Score of 85+.'},
     vault:{n:'Dragon Vault',i:'lock',d:'Access to roles at $100K+ or ₹10L+.'},
     bridge:{n:'Dragon Bridge',i:'link',d:'Live pipeline and campus-drive view, from sourced to hired.'},
     results:{n:'Match Results',i:'listcheck',d:'Explained candidate matches across certifications, skill scores and preference flags.'},
@@ -1162,7 +1168,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
     { title:'From aspiration to a verified profile, then a job.', outIcon:'route', outcome:'A career path that adapts as they grow.',
       steps:['Verify credentials','Set a destination','Practise and build','Take proctored assessments','Get matched'],
       caps:[
-        { i:'route', h:'Build job-relevant skills', r:'Skills built with direction and a visible salary impact.', m:['Dragon GPS','Dragon Prep','Skill Craft','Project Lab','Dragon Quest'], w:'Choose a 3, 6 or 12-month career route. Practise across 10 exam streams and CS tracks. Train against a named company’s hiring needs. Ship real projects. Stay motivated with streaks and rewards.' },
+        { i:'route', h:'Build job-relevant skills', r:'Skills built with direction and a visible salary impact.', m:['Dragon GPS','Dragon Prep','Skill Craft','Project Lab','Dragon Quest'], w:'Choose a 3, 6 or 12-month career route with daily micro-actions. Practise across 10 exam streams and CS tracks. Train against a named company’s hiring needs. Ship real projects. Stay motivated with streaks and rewards.' },
         { i:'idcard', h:'Establish a verified identity', r:'A verified, trust-scored profile in 60 seconds.', m:['Talent Onboarding','My Profile','Dragon Nexus'], w:'Connect Credly, AWS, Google Cloud, Microsoft Learn, Snowflake, Databricks, NVIDIA DLI and more, or upload a certificate PDF. Bring in GitHub and LeetCode history.' },
         { i:'trophy', h:'Prove skills under real conditions', r:'Credentials earned under proctored conditions.', m:['Dragon Arena'], w:'Take 9 assessment formats across 43 domains, with a live Trust Score and a pre-assessment system check.' },
         { i:'clipboard', h:'Know exactly what to fix', r:'Every assessment ends with a next GPS step.', m:['Dragon Review (candidate view)','Dragon GPS'], w:'See score breakdowns against average and top-10% benchmarks, get specific feedback, and share credentials to LinkedIn.' },
@@ -1292,7 +1298,7 @@ h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
         { r:'ai', step:1, t:'Found the <strong>strongest verified matches</strong> for this role.', delay:800 },
         { r:'ai', step:2, t:'I suggest an offer adjustment to improve acceptance odds.', delay:800 },
         { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('users')}Pipeline screened<span class="pill done">Done</span></div></div>` },
-        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('send')}Campaign + offer draft<span class="pill">Prepared</span></div></div>` }
+        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('send')}Assessment campaign + offer communication<span class="pill">Prepared</span></div></div>` }
       ] }
   ];
   const steps = $$('#loop .lstep');
