@@ -139,30 +139,33 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 /* =========================================================
    1. HERO
    ========================================================= */
-.hero{position:relative;overflow:hidden;border-radius:var(--radius);color:#fff;padding:38px 40px 34px;isolation:isolate;background:#ff2d55;border:1px solid rgba(255,255,255,.2);box-shadow:0 18px 44px -12px rgba(255,45,85,.42), var(--shadow-card)}
+.hero{position:relative;overflow:hidden;border-radius:var(--radius);color:var(--ink);padding:38px 40px 34px;isolation:isolate;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-card)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
-.hero .eyebrow{color:rgba(255,255,255,.95);gap:8px;font-weight:700}
-.mark{width:32px;height:32px;border-radius:var(--radius-sm);display:grid;place-items:center;font-size:16px;color:#ff2d55;background:#fff;border:1px solid rgba(255,255,255,.5);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hero .eyebrow{color:var(--crimson-600);gap:8px;font-weight:700}
+.mark{width:32px;height:32px;border-radius:var(--radius-sm);display:grid;place-items:center;font-size:16px;color:#ff2d55;background:rgba(255,45,85,.1);border:1px solid rgba(255,45,85,.3)}
 .mark .ic{fill:rgba(255,45,85,.2)}
-.hero h1{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:14px;color:#fff}
-.hero h1 em{font-style:normal;color:#fff;-webkit-text-fill-color:#fff;position:relative;white-space:nowrap}
-.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3.5px;border-radius:3px;background:rgba(255,255,255,.9);transform-origin:left;animation:underline 1.2s .6s var(--ease) both}
+.hero h1{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:14px;color:var(--ink)}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg, #ff2d55 0%, #e11d48 55%, #be123c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3.5px;border-radius:3px;background:linear-gradient(90deg, #ff2d55, #f43f5e);transform-origin:left;animation:underline 1.2s .6s var(--ease) both}
 @keyframes underline{from{transform:scaleX(0)}}
-.hero .lead{margin-top:14px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.92);max-width:60ch}
+.hero .lead{margin-top:14px;font-size:15px;line-height:1.6;color:var(--muted-foreground);max-width:60ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 .hero-cta .btn{height:44px}
 
-.chatwin{border-radius:var(--radius);background:#fff;border:1px solid rgba(255,255,255,.5);box-shadow:0 20px 48px -12px rgba(0,0,0,.28), 0 4px 16px -4px rgba(0,0,0,.1);position:relative}
-.chat-bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--canvas);font-size:13.5px;font-weight:600;color:var(--ink)}
-.chat-bar .dots{display:flex;gap:5px}
-.chat-bar .dots i{width:8px;height:8px;border-radius:50%;background:hsl(220 14% 78%)}
-.chat-bar .live{margin-left:auto;display:flex;align-items:center;gap:6px;font-weight:500;font-size:11px;color:var(--muted)}
-.chat-bar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#10b981;animation:ping 1.8s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.6)}70%,100%{box-shadow:0 0 0 8px rgba(16,185,129,0)}}
+.chatwin{border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(255,45,85,.18);box-shadow:0 12px 36px -12px rgba(255,45,85,.12), 0 4px 16px -4px rgba(0,0,0,.04);position:relative}
+.chat-bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--canvas);font-size:13.5px;font-weight:600;color:var(--ink);border-top-left-radius:20px;border-top-right-radius:20px}
+.chat-bar .dots{display:flex;gap:6px}
+.chat-bar .dots i{width:9px;height:9px;border-radius:50%}
+.chat-bar .dots i:nth-child(1){background:#ff5f56}
+.chat-bar .dots i:nth-child(2){background:#ffbd2e}
+.chat-bar .dots i:nth-child(3){background:#27c93f}
+.chat-bar .live{display:none}
 .chat-body{height:230px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scrollbar-width:none}
 .chat-body::-webkit-scrollbar{display:none}
 .chat-input{margin:0 16px 16px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--radius-md);background:var(--canvas);border:1px solid var(--line);font-size:13.5px;color:var(--ink)}
+.chat-input>svg.ic{color:#ff2d55;font-size:16px}
 .chat-input .send{margin-left:auto;width:26px;height:26px;border-radius:var(--radius-sm);background:linear-gradient(135deg, #ff2d55, #f43f5e);color:#fff;display:grid;place-items:center}
+.chat-input .send .ic{color:#fff !important;stroke:#fff !important;stroke-width:2.4;width:13px;height:13px}
 .msg{max-width:90%;font-size:14.5px;line-height:1.6;animation:pop .45s var(--ease) both}
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}}
 .msg.user{align-self:flex-end;background:rgba(255,45,85,.08);color:var(--crimson-900);border:1px solid rgba(255,45,85,.22);padding:11px 16px;border-radius:14px 14px 4px 14px;font-weight:500}
@@ -172,10 +175,10 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .msg.ai .bub .src{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .msg.ai .bub .src span{font-size:12px;padding:2px 10px;border-radius:var(--radius);background:var(--secondary);border:1px solid var(--line);color:var(--ink-2)}
 .msg.ai .bub strong{color:var(--ink)}
-.typing{display:inline-flex;gap:4px;padding:4px 0}
-.typing i{width:6px;height:6px;border-radius:50%;background:hsl(220 14% 75%);animation:bounce 1s infinite}
-.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
-@keyframes bounce{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+.typing{display:inline-flex;align-items:center;gap:5px;padding:4px 2px;min-height:18px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#ff2d55;box-shadow:0 1px 3px rgba(255,45,85,.3);animation:bounce 1s infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes bounce{0%,60%,100%{transform:none;opacity:.35}30%{transform:translateY(-5px);opacity:1}}
 .acard{align-self:flex-start;margin-left:36px;width:calc(100% - 36px);max-width:400px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:var(--radius-md);padding:15px 17px;animation:pop .5s var(--ease) both;box-shadow:0 8px 24px -10px rgba(0,0,0,.1)}
 .acard-h{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600}
 .acard-h .ic{color:var(--crimson-600);font-size:15px}
@@ -187,23 +190,54 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .abtns button{height:36px;padding:0 16px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;background:linear-gradient(135deg, #ff2d55, #f43f5e);color:#fff}
 .abtns button.g{background:var(--secondary);border:1px solid var(--line);color:var(--ink-2)}
 .abtns button:disabled{opacity:.55;cursor:default}
-.float-tag{position:absolute;display:flex;align-items:center;gap:9px;padding:8px 13px;border-radius:var(--radius-md);background:#fff;border:1px solid rgba(255,255,255,.6);color:var(--ink);font-size:12px;font-weight:600;box-shadow:0 12px 28px -10px rgba(0,0,0,.25);animation:bob 5s ease-in-out infinite;z-index:3;white-space:nowrap}
+.float-tag{position:absolute;display:flex;align-items:center;gap:9px;padding:8px 13px;border-radius:var(--radius-md);background:#fff;border:1px solid rgba(255,45,85,.25);color:var(--ink);font-size:12px;font-weight:600;box-shadow:0 12px 28px -10px rgba(255,45,85,.16);animation:bob 5s ease-in-out infinite;z-index:3;white-space:nowrap}
 .float-tag .ic{color:var(--crimson-600);font-size:16px}
 .float-tag small{display:block;font-size:10px;font-weight:400;color:var(--muted);line-height:1.2}
 .float-tag.t1{left:170px;top:-24px}
 .float-tag.t2{right:-18px;bottom:-18px;animation-delay:-2.4s}
 @keyframes bob{50%{transform:translateY(-6px)}}
-.hero-foot{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.25)}
+
+/* Hero Dragon AI chat window - White Background with Red Header Bar */
+.hero .chatwin{border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(255,45,85,.22);box-shadow:0 18px 44px -12px rgba(255,45,85,.2), 0 4px 16px -4px rgba(0,0,0,.06);color:var(--ink)}
+.hero .chat-bar{background:linear-gradient(135deg, #ff2d55 0%, #ee1d52 100%);border-bottom:1px solid rgba(255,45,85,.3);color:#fff;border-top-left-radius:20px;border-top-right-radius:20px}
+.hero .chat-bar .dots{display:flex;gap:6px}
+.hero .chat-bar .dots i{width:9px;height:9px;border-radius:50%}
+.hero .chat-bar .dots i:nth-child(1){background:#ff5f56;box-shadow:none}
+.hero .chat-bar .dots i:nth-child(2){background:#ffbd2e;box-shadow:none}
+.hero .chat-bar .dots i:nth-child(3){background:#27c93f;box-shadow:none}
+.hero .chat-bar .ic{color:#fff !important}
+.hero .chat-bar .live{display:none !important}
+.hero .msg.user{background:rgba(255,45,85,.08);color:var(--crimson-900);border:1px solid rgba(255,45,85,.22);padding:11px 16px;border-radius:14px 14px 4px 14px;font-weight:500}
+.hero .msg.ai .av{width:28px;height:28px;border-radius:var(--radius-sm);flex:none;display:grid;place-items:center;font-size:15px;background:rgba(255,45,85,.1);border:1px solid rgba(255,45,85,.25);color:#ff2d55}
+.hero .msg.ai .bub{background:#fff;border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04);padding:11px 16px;border-radius:4px 14px 14px 14px;color:var(--ink)}
+.hero .msg.ai .bub strong{color:var(--ink)}
+.hero .msg.ai .bub .src span{background:var(--secondary);border:1px solid var(--line);color:var(--ink-2)}
+.hero .typing{display:inline-flex;align-items:center;gap:5px;padding:4px 2px;min-height:18px}
+.hero .typing i{background:#ff2d55;box-shadow:0 1px 3px rgba(255,45,85,.35);width:7px;height:7px}
+.hero .acard{background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px -10px rgba(0,0,0,.1);color:var(--ink)}
+.hero .acard-h .ic{color:#ff2d55}
+.hero .acard-h .pill{background:rgba(255,45,85,.08);color:var(--crimson-700);border:1px solid rgba(255,45,85,.2)}
+.hero .acard-h .pill.done{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+.hero .arow{background:var(--secondary);border:1px solid var(--line);color:var(--ink)}
+.hero .arow b{color:#ff2d55}
+.hero .abtns button{background:linear-gradient(135deg, #ff2d55, #f43f5e);color:#fff}
+.hero .abtns button.g{background:var(--secondary);border:1px solid var(--line);color:var(--ink-2)}
+.hero .chat-input{margin:0 16px 16px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--radius-md);background:var(--canvas);border:1px solid var(--line);font-size:13.5px;color:var(--ink)}
+.hero .chat-input>svg.ic{color:#ff2d55;font-size:16px;stroke-width:2}
+.hero .chat-input .send{background:linear-gradient(135deg, #ff2d55, #f43f5e);color:#fff;box-shadow:0 2px 8px rgba(255,45,85,.45);cursor:pointer}
+.hero .chat-input .send .ic, .hero .chat-input .send svg{color:#fff !important;stroke:#fff !important;fill:none !important;width:13px;height:13px;stroke-width:2.4}
+.hero .float-tag{background:#fff;border:1px solid rgba(255,45,85,.25);color:var(--ink);box-shadow:0 12px 28px -10px rgba(255,45,85,.16)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
 .diffs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .diff{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:center;cursor:help;padding:8px 10px;margin:-8px -10px;border-radius:var(--radius-sm);transition:background .25s,transform .2s}
-.diff:hover,.diff:focus-visible{background:rgba(255,255,255,.14);transform:translateY(-1px)}
-.diff .ic{font-size:22px;color:#fff}
-.diff b{font-size:15px;font-weight:600;line-height:1.3;display:block;color:#fff}
+.diff:hover,.diff:focus-visible{background:rgba(255,45,85,.08);transform:translateY(-1px)}
+.diff .ic{font-size:22px;color:var(--crimson-600)}
+.diff b{font-size:15px;font-weight:600;line-height:1.3;display:block;color:var(--ink)}
 .proof{display:flex;justify-content:space-between;align-items:stretch}
-.proof div{padding:2px 0 2px 16px;border-left:1px solid rgba(255,255,255,.25);display:flex;flex-direction:column;justify-content:center;flex:0 0 auto}
+.proof div{padding:2px 0 2px 16px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;flex:0 0 auto}
 .proof div:first-child{border:0;padding-left:0}
-.proof strong{display:block;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1;white-space:nowrap;color:#fff}
-.proof span{font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.35;display:block;margin-top:4px;max-width:10ch;font-weight:500}
+.proof strong{display:block;font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1;white-space:nowrap;color:var(--crimson-600)}
+.proof span{font-size:12.5px;color:var(--muted-foreground);line-height:1.35;display:block;margin-top:4px;max-width:10ch;font-weight:500}
 
 /* explore bar */
 /* sticky band: keeps clear space between the bar and the sections scrolling beneath it */
@@ -279,9 +313,9 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .joutcome .ic{font-size:20px;color:#ff2d55}
 
 /* outcome cards: long text lives in the dark hover tooltip */
-.hint{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);margin-bottom:14px}
-.hint .ic{font-size:16px;color:var(--crimson)}
-.cap{display:grid;grid-template-columns:30px minmax(0,1fr) 20px;gap:16px;align-items:center;padding:16px 22px;border:1px solid rgba(220,226,235,.9);border-radius:var(--radius-md);background:#fff;cursor:help;transition:all .25s var(--ease)}
+.hint{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.hint .ic{font-size:15px;color:var(--crimson);flex:none}
+.cap{display:grid;grid-template-columns:30px minmax(0,1fr);gap:16px;align-items:center;padding:15px 22px;border:1px solid rgba(220,226,235,.9);border-radius:var(--radius-md);background:#fff;cursor:help;transition:all .25s var(--ease)}
 .cap+.cap{margin-top:10px}
 .cap:hover,.cap:focus-visible{border-color:rgba(255,45,85,.4);background:linear-gradient(90deg, rgba(255,45,85,.03) 0%, #fff 100%);box-shadow:0 12px 28px -12px rgba(255,45,85,.18);transform:translateX(5px)}
 .cap>.ic:first-child{font-size:24px;color:#ff2d55;transition:transform .25s var(--ease)}
@@ -298,8 +332,11 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 
 /* mock product screens */
 .mock{border-radius:var(--radius-md);background:#fff;border:1px solid var(--line);box-shadow:0 22px 36px -26px rgba(0,0,0,.5);overflow:hidden;font-size:13px}
-.mock-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:var(--secondary);border-bottom:1px solid var(--line)}
-.mock-bar i{width:8px;height:8px;border-radius:50%;background:hsl(220 14% 80%)}
+.mock-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:var(--secondary);border-bottom:1px solid var(--line);border-top-left-radius:inherit;border-top-right-radius:inherit}
+.mock-bar i{width:9px;height:9px;border-radius:50%}
+.mock-bar i:nth-child(1){background:#ff5f56}
+.mock-bar i:nth-child(2){background:#ffbd2e}
+.mock-bar i:nth-child(3){background:#27c93f}
 .mock-bar span{margin:0 auto;font-size:11.5px;color:var(--muted);background:#fff;border:1px solid var(--line);padding:1px 16px;border-radius:6px}
 .mock-body{padding:14px;display:grid;gap:10px}
 .mock h4{font-size:13.5px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
@@ -364,10 +401,9 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .layers::before{content:"";position:absolute;left:128px;top:4px;bottom:4px;width:0;border-left:2px dashed rgba(239,62,73,.4);z-index:2;pointer-events:none}
 .layers::after{content:"";position:absolute;left:124px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--crimson);box-shadow:0 0 0 5px rgba(239,62,73,.2);z-index:3;animation:rail 5.5s var(--ease) infinite;pointer-events:none}
 @keyframes rail{0%{top:4px;opacity:0}8%{opacity:1}92%{opacity:1}100%{top:calc(100% - 14px);opacity:0}}
-.fw{border:1px solid rgba(255,45,85,.22);border-radius:var(--radius-md);padding:18px 20px 16px;background:radial-gradient(circle at 50% 38%, rgba(255,45,85,.08) 0%, rgba(255,45,85,.02) 60%, transparent 100%), linear-gradient(180deg, #fff9fa 0%, #fff2f4 100%);box-shadow:0 10px 28px -10px rgba(255,45,85,.14);display:flex;flex-direction:column}
-.fw h3{font-size:15px;font-weight:700;display:flex;gap:7px;align-items:center;color:var(--ink)}
-.fw h3 .ic{color:#ff2d55}
-.fw svg.wheel{width:100%;max-width:270px;height:auto;display:block;margin:0 auto;overflow:visible;flex:1}
+.fw{border:1px solid rgba(255,45,85,.22);border-radius:var(--radius-md);padding:18px 20px 16px;background:radial-gradient(circle at 50% 38%, rgba(255,45,85,.08) 0%, rgba(255,45,85,.02) 60%, transparent 100%), linear-gradient(180deg, #fff9fa 0%, #fff2f4 100%);box-shadow:0 10px 28px -10px rgba(255,45,85,.14);display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box}
+.fw h3{font-size:15px;font-weight:700;display:flex;align-items:center;color:var(--ink)}
+.fw svg.wheel{width:100%;max-width:260px;height:auto;max-height:250px;display:block;margin:0 auto;overflow:visible;flex:1 1 auto}
 .ring-track{fill:none;stroke:rgba(255,45,85,.18);stroke-width:2.5}
 .ring-flow{fill:none;stroke:#ff2d55;stroke-width:2.5;stroke-dasharray:6 9;animation:dash 2s linear infinite}
 .fwn{cursor:pointer;color:#ff2d55}
@@ -382,17 +418,20 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 @keyframes halo{from{r:26;opacity:.6}to{r:38;opacity:0}}
 .fw-center{font-size:11px;fill:var(--muted);text-anchor:middle;font-family:inherit;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .fw-center.big{font-size:15px;fill:var(--ink);letter-spacing:0;text-transform:none;font-weight:700}
-.fw-info{margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.55;min-height:92px;padding:12px 14px;border-radius:var(--radius-sm);background:#fff;border:1px solid rgba(255,45,85,.16);box-shadow:0 4px 14px -6px rgba(255,45,85,.1)}
-.fw-info b{display:block;font-size:14.5px;margin-bottom:3px;color:#ff2d55;font-weight:700}
+.fw-info{margin-top:10px;font-size:13px;color:var(--ink-2);line-height:1.5;height:84px;min-height:84px;max-height:84px;box-sizing:border-box;overflow:hidden;padding:10px 14px;border-radius:var(--radius-sm);background:#fff;border:1px solid rgba(255,45,85,.16);box-shadow:0 4px 14px -6px rgba(255,45,85,.1);flex:0 0 84px}
+.fw-info b{display:block;font-size:14px;margin-bottom:3px;color:#ff2d55;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fw-info span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.45}
 
 /* =========================================================
    5. AGENTIC AI
    ========================================================= */
-.agentic{position:relative;overflow:hidden;border-radius:var(--radius);padding:36px 40px;color:var(--ink);isolation:isolate;scroll-margin-top:150px;background:radial-gradient(circle at 18% 25%, rgba(255,45,85,.07) 0%, rgba(255,45,85,.01) 45%, transparent 70%), var(--card);border:1px solid rgba(220,226,235,.9);box-shadow:0 4px 24px -4px rgba(255,45,85,.06), var(--shadow)}
+.agentic{position:relative;overflow:hidden;border-radius:var(--radius);padding:36px 40px;color:var(--ink);isolation:isolate;scroll-margin-top:150px;background:#fff;border:1px solid rgba(220,226,235,.9);box-shadow:var(--shadow-card)}
 .agentic .eyebrow{color:var(--crimson-600);font-weight:700}
+.agentic .eyebrow .ic{color:var(--crimson-600)}
 .agentic .row-head p{color:var(--muted)}
 .agentic .row-head h2{color:var(--ink);max-width:26ch;font-weight:800}
-.agentic .row-head h2 em{font-style:normal;background:linear-gradient(135deg, #ff2d55, #f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.agentic .row-head h2 em{font-style:normal;background:linear-gradient(135deg, #ff2d55, #f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative}
+.agentic .row-head h2 em::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;border-radius:2px;background:linear-gradient(90deg, #ff2d55, #f43f5e)}
 .agentic .row-head{margin-bottom:18px}
 .agentic .rtabs{margin-bottom:18px}
 .rtabs{display:flex;gap:8px;flex-wrap:wrap}
@@ -404,6 +443,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .ag-grid .chat-body{height:270px}
 .loop{display:grid;grid-template-rows:auto repeat(4,1fr);gap:12px}
 .loop-h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson-600);display:flex;align-items:center;gap:7px}
+.loop-h .ic{color:var(--crimson-600)}
 .lstep{position:relative;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;padding:14px 18px;border-radius:var(--radius-md);background:#fff;border:1px solid var(--line);transition:all .4s var(--ease);opacity:.85}
 .lstep .n{width:44px;height:44px;border-radius:var(--radius-md);display:grid;place-items:center;font-size:21px;background:var(--secondary);border:1px solid var(--line);color:var(--muted);transition:all .4s}
 .lstep b{font-size:15.5px;font-weight:600;display:block;line-height:1.2;color:var(--ink)}
@@ -459,7 +499,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 /* =========================================================
    6. OUTCOMES
    ========================================================= */
-.outcome-sec{border-top:3px solid var(--crimson)}
+.outcome-sec{position:relative}
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .ocol{padding:20px 24px;border:1px solid rgba(220, 226, 235, 0.9);border-radius:var(--radius-md);background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
 .ocol:hover{transform:translateY(-3px);border-color:rgba(255,45,85,.35);box-shadow:0 14px 28px -12px rgba(255,45,85,.18)}
@@ -469,13 +509,13 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .ocol li .ic{color:var(--crimson);font-size:16px;margin-top:4px}
 .converge{height:24px;display:block;width:100%}
 .converge path{fill:none;stroke:var(--crimson);stroke-width:2;stroke-dasharray:5 7;vector-effect:non-scaling-stroke;animation:dash 1.6s linear infinite}
-.obar{position:relative;border-radius:var(--radius-md);padding:26px 36px;color:var(--ink);overflow:hidden;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:24px;align-items:center;background:linear-gradient(135deg, rgba(255,45,85,.07) 0%, rgba(255,45,85,.02) 50%, #fff 100%);border:1.5px solid rgba(255,45,85,.28);box-shadow:0 12px 32px -12px rgba(255,45,85,.18)}
+.obar{position:relative;border-radius:var(--radius-md);padding:20px 28px;color:var(--ink);overflow:hidden;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:24px;align-items:center;background:linear-gradient(135deg, rgba(255,45,85,.07) 0%, rgba(255,45,85,.02) 50%, #fff 100%);border:1.5px solid rgba(255,45,85,.28);box-shadow:0 12px 32px -12px rgba(255,45,85,.18)}
 .obar small{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ff2d55;display:flex;align-items:center;gap:7px}
-.obar p{font-size:16px;font-weight:600;margin-top:6px;line-height:1.5;color:var(--ink)}
+.obar p{font-size:15px;font-weight:600;margin-top:6px;line-height:1.5;color:var(--ink)}
 .ind{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative}
 .ind div{padding-left:14px;border-left:2px solid rgba(255,45,85,.3)}
-.ind strong{display:block;font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.1;white-space:nowrap;color:#ff2d55}
-.ind span{font-size:13.5px;color:var(--muted);font-weight:500}
+.ind strong{display:block;font-size:clamp(20px,2.2vw,27px);font-weight:700;letter-spacing:-.025em;line-height:1.15;white-space:nowrap;color:#ff2d55}
+.ind span{font-size:13px;color:var(--muted);font-weight:500}
 .cta-sec{text-align:center;padding:50px 40px 42px}
 .cta-sec .eyebrow{justify-content:center;color:#ff2d55;font-weight:700}
 .cta-sec h2{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.02em;margin:12px 0;color:var(--ink)}
@@ -720,8 +760,8 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
             <h1 id="hero-h">Don’t write a resume. <em>Prove it.</em></h1>
             <p class="lead">Dragon Suite is an agentic AI talent ecosystem for students and job seekers, institutions and placement teams, and recruiters and employers. It takes talent from first practice question to verified hire, and acts at every step along the way.</p>
             <div class="hero-cta">
-              <button class="btn btn-light" data-demo><svg class="ic"><use href="#i-calendar"/></svg>Book a demo</button>
-              <a class="btn btn-ghost" href="#ecosystem">Explore the platform<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+              <button class="btn btn-primary" data-demo><svg class="ic"><use href="#i-calendar"/></svg>Book a demo</button>
+              <a class="btn btn-outline" href="#ecosystem">Explore the platform<svg class="ic"><use href="#i-arrow-right"/></svg></a>
             </div>
           </div>
 
@@ -729,7 +769,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
             <div class="float-tag t1"><svg class="ic"><use href="#i-shield-check"/></svg><div>Trust Score 92<small>Proctored · verified</small></div></div>
             <div class="float-tag t2"><svg class="ic"><use href="#i-award"/></svg><div>Dragon Score 86<small>Elite eligible (85+)</small></div></div>
             <div class="chatwin" aria-label="Illustrative Dragon AI conversation">
-              <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:var(--crimson-600);font-size:15px"><use href="#i-sparkles"/></svg>Dragon AI<span class="live">Sample</span></div>
+              <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="font-size:15px"><use href="#i-sparkles"/></svg>Dragon AI</div>
               <div class="chat-body" id="heroChat"></div>
               <div class="chat-input"><svg class="ic"><use href="#i-message"/></svg>Ask Dragon AI anything…<span class="send"><svg class="ic"><use href="#i-send"/></svg></span></div>
             </div>
@@ -739,7 +779,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="hero-foot">
           <div class="diffs">
             <div class="diff" tabindex="0" data-plain data-tip="Credentials pulled from issuing platforms. Scores earned under proctored conditions."><svg class="ic"><use href="#i-shield-check"/></svg><b>Verified, not self-reported.</b><span class="sr">Credentials pulled from issuing platforms. Scores earned under proctored conditions.</span></div>
-            <div class="diff" tabindex="0" data-plain data-tip="Career routes, practice and assessments reshape themselves around each person."><svg class="ic"><use href="#i-refresh"/></svg><b>Adaptive, not static.</b><span class="sr">Career routes, practice and assessments reshape themselves around each person.</span></div>
+            <div class="diff" tabindex="0" data-plain data-tip="Career routes, practice and assessments reshape themselves around each person."><svg class="ic"><use href="#i-route"/></svg><b>Adaptive, not static.</b><span class="sr">Career routes, practice and assessments reshape themselves around each person.</span></div>
             <div class="diff" tabindex="0" data-plain data-tip="Dragon AI generates tests, screens pipelines and files applications."><svg class="ic"><use href="#i-zap"/></svg><b>Acting, not advising.</b><span class="sr">Dragon AI generates tests, screens pipelines and files applications.</span></div>
           </div>
           <div class="proof" role="list">
@@ -882,7 +922,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="eco-grid">
           <div class="layers" id="layers" aria-label="Five platform layers. Hover or focus a module for details."></div>
           <aside class="fw" aria-label="The Dragon Suite flywheel">
-            <h3><svg class="ic"><use href="#i-refresh"/></svg>The flywheel</h3>
+            <h3>The flywheel</h3>
             <svg class="wheel" viewBox="0 0 340 340" role="img" aria-label="Flywheel: Prep, Elite, Agent, Hire, Bridge, GPS, back to Prep">
               <circle class="ring-track" cx="170" cy="170" r="120"/>
               <path id="orbit" class="ring-flow" d="M170 50 A120 120 0 0 1 170 290 A120 120 0 0 1 170 50"/>
@@ -913,11 +953,11 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 
         <div class="ag-grid">
           <div class="chatwin">
-            <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:var(--crimson-600);font-size:15px"><use href="#i-sparkles"/></svg><span id="agRoleLabel">Dragon AI</span><span class="live">Sample</span></div>
+            <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><svg class="ic" style="color:var(--crimson-600);font-size:15px"><use href="#i-sparkles"/></svg><span id="agRoleLabel">Dragon AI</span></div>
             <div class="chat-body" id="agChat"></div>
           </div>
           <div class="loop" id="loop">
-            <div class="loop-h"><svg class="ic"><use href="#i-refresh"/></svg>The agentic loop</div>
+            <div class="loop-h"><svg class="ic"><use href="#i-sparkles"/></svg>The agentic loop</div>
             <div class="lstep"><div class="n"><svg class="ic"><use href="#i-eye"/></svg></div><div><b>Understand</b><p></p></div></div>
             <div class="lstep"><div class="n"><svg class="ic"><use href="#i-search"/></svg></div><div><b>Identify</b><p></p></div></div>
             <div class="lstep"><div class="n"><svg class="ic"><use href="#i-sparkles"/></svg></div><div><b>Recommend</b><p></p></div></div>
@@ -1275,7 +1315,6 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
       <div class="cap" tabindex="0" data-follow="1" data-name="${esc(c.h)}" data-tip="${esc(c.w)}" data-mods="${esc(c.m.join(' · '))}">
         ${ic(c.i)}
         <div class="cap-t"><b>${esc(c.h)}</b><em>${esc(c.r)}</em><span class="sr">${esc(c.w)} Modules: ${esc(c.m.join(', '))}.</span></div>
-        ${ic('info', 'cap-i')}
       </div>`).join('');
   }
   tabs($('#jTabs'), '.ptab', renderJourney);
@@ -1302,12 +1341,12 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   $$('#layers .chip').forEach(c => { const t = document.createElement('span'); t.className = 'sr'; t.textContent = '. ' + c.dataset.tip; c.appendChild(t); });
 
   const FW = [
-    { id:'prep', t:'Prep', i:'book', d:MODS.prep.d, flow:'Practice builds the skills and scores behind a Dragon Score of 85+, which qualifies talent for Elite.' },
-    { id:'elite', t:'Elite', i:'gem', d:MODS.elite.d, flow:'Elite talent can let Dragon Agent find and apply to roles in Autonomous, Approval or Discovery mode.' },
-    { id:'agent', t:'Agent', i:'bot', n:'Dragon Agent', d:'Finds, customises and submits applications in Autonomous, Approval or Discovery mode.', flow:'Every application sharpens matching. Employers assess applicants with unique, company-calibrated tests.' },
-    { id:'hire', t:'Hire', i:'briefcase', d:MODS.hire.d, flow:'Results land in one live pipeline, scored on skills, growth potential, cultural fit and compensation.' },
-    { id:'bridge', t:'Bridge', i:'link', d:MODS.bridge.d, flow:'Every hire sharpens calibration. Outcomes feed Dragon GPS, which reroutes careers as the market shifts.' },
-    { id:'gps', t:'GPS', i:'compass', d:MODS.gps.d, flow:'Every assessment sharpens navigation. GPS sets the next step and sends talent back to Dragon Prep.' }
+    { id:'prep', t:'Prep', i:'book', d:MODS.prep.d, flow:'Practice builds verified skills and scores for an 85+ Dragon Score, qualifying talent for Elite.' },
+    { id:'elite', t:'Elite', i:'gem', d:MODS.elite.d, flow:'Elite talent activates Dragon Agent to discover, match and apply to calibrated roles.' },
+    { id:'agent', t:'Agent', i:'bot', n:'Dragon Agent', d:'Finds, customises and submits applications in Autonomous, Approval or Discovery mode.', flow:'Applications sharpen matching while employers assess talent with unique calibrated tests.' },
+    { id:'hire', t:'Hire', i:'briefcase', d:MODS.hire.d, flow:'Results land in one live pipeline scored on verified skills, potential and compensation.' },
+    { id:'bridge', t:'Bridge', i:'link', d:MODS.bridge.d, flow:'Every hire sharpens calibration, feeding outcomes to Dragon GPS as market demands shift.' },
+    { id:'gps', t:'GPS', i:'compass', d:MODS.gps.d, flow:'Assessments sharpen career navigation, mapping next steps and routing back to Dragon Prep.' }
   ];
   $('#fwNodes').innerHTML = FW.map((f, k) => {
     const a = k * 60 * Math.PI / 180, x = 170 + 120 * Math.sin(a), y = 170 - 120 * Math.cos(a);
@@ -1338,41 +1377,56 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
      ========================================================= */
   const ROLES = [
     { label:'Dragon AI · Students & Job Seekers',
-      loop:['Reads GPS progress, scores and profile','Finds weak areas and skill gaps','Suggests a reroute or the next module','Generates a targeted mock test. Triggers Dragon Agent to apply.'],
+      loop:[
+        'Reads GPS route, verified badges and live assessment telemetry',
+        'Pinpoints specific skill gaps holding back top-tier hiring eligibility',
+        'Reroutes daily preparation plan with targeted high-yield sprints',
+        'Deploys autonomous Dragon Agent to apply for verified role matches'
+      ],
       script:[
-        { r:'user', t:'I want a backend role in 3 months. What should I fix first?' },
-        { r:'ai', step:0, t:'Reading your route and results.', src:['GPS progress','Scores','Profile'], delay:800 },
-        { r:'ai', step:1, t:'Weakest area for backend roles: <strong>system design</strong>.', delay:800 },
-        { r:'ai', step:2, t:'I suggest rerouting your GPS with a system design sprint.', delay:800 },
-        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('clipboard')}Targeted mock test generated<span class="pill done">Ready</span></div><div class="arow"><span>System design · 30 min</span><b>Start</b></div></div>` },
-        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('bot')}Dragon Agent triggered<span class="pill">Applying</span></div></div>` }
+        { r:'user', t:'I want a Cloud Backend role in 60 days. What’s blocking me and can you handle the applications?' },
+        { r:'ai', step:0, t:'Auditing your verified AWS badges, Arena test history, and live fintech hiring cutoffs.', src:['3 Verified Certs','Dragon Score 88','Cloud Backend Benchmark'], delay:600 },
+        { r:'ai', step:1, t:'You’re at <strong>92% readiness</strong> on APIs & Containers, but <strong>System Design (Distributed Caching)</strong> is keeping you just below the Elite shortlist.', delay:650 },
+        { r:'ai', step:2, t:'I’ve inserted a focused 3-day Caching sprint into your GPS, and drafted 3 verified applications with your proof-of-work cards.', delay:700 },
+        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('clipboard')}3-Day System Design Sprint<span class="pill done">Added to GPS</span></div><div class="arow"><span>Distributed Caching · 45 min</span><b>Start Practice</b></div></div>` },
+        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('bot')}Dragon Agent · Autonomous Queue<span class="pill done">3 Matched</span></div><div class="arow"><span>Fintech Backend (94% match)</span><b style="color:var(--ok)">Auto-Applied</b></div><div class="arow"><span>Cloud Infra Role (89% match)</span><b style="color:var(--muted)">Reviewing</b></div></div>` }
       ] },
     { label:'Dragon AI · Placement Teams',
-      loop:['Reads cohort performance and drive calendars','Finds at-risk students and company gaps','Suggests a targeted boot camp and Dragon Prep paths','Generates batch reports. Schedules campus drives.'],
+      loop:[
+        'Audits whole-batch performance and upcoming campus drive timelines',
+        'Surfaces at-risk students and cohort gaps against hiring thresholds',
+        'Designs instant intervention bootcamps and targeted preparation paths',
+        'Generates institutional readiness reports and dispatches student invitations'
+      ],
       script:[
-        { r:'user', t:'Get our batch ready for the next campus drive.' },
-        { r:'ai', step:0, t:'Reading cohort performance and the drive calendar.', src:['Cohort scores','Drive calendar'], delay:800 },
-        { r:'ai', step:1, t:'Found <strong>at-risk students</strong> and a gap against the company threshold.', delay:800 },
-        { r:'ai', step:2, t:'I recommend a targeted boot camp plus Dragon Prep paths.', delay:800 },
-        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('bar')}Batch report generated<span class="pill done">Ready</span></div></div>` },
-        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('calendar')}Campus drive scheduled<span class="pill">Awaiting company</span></div></div>` }
+        { r:'user', t:'We have the Tier-1 tech drive in 3 weeks. Are our students ready, and how do we clear cutoffs?' },
+        { r:'ai', step:0, t:'Auditing 320 student profiles against Tier-1 partner hiring cutoffs and historical drive benchmarks.', src:['320 Student Profiles','Proctored Arena Scores','Tier-1 Cutoff Rules'], delay:600 },
+        { r:'ai', step:1, t:'<strong>248 students</strong> meet the 85+ score cutoff. However, <strong>42 students</strong> lag in <strong>DSA Trees & Graphs</strong>, risking a 13% placement drop.', delay:650 },
+        { r:'ai', step:2, t:'Configured a rapid 5-day bootcamp in Dragon Prep for flagged students, and prepared verified batch portfolios for visiting employers.', delay:700 },
+        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('bar')}Campus Drive Readiness Audit<span class="pill done">Complete</span></div><div class="arow"><span>248 Drive-Ready · 42 Intervention</span><b>View Cohort</b></div></div>` },
+        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('calendar')}5-Day DSA Intervention Bootcamp<span class="pill done">Scheduled</span></div><div class="arow"><span>Assigned to 42 flagged students</span><b>Active in Prep</b></div></div>` }
       ] },
     { label:'Dragon AI · Recruiters & Employers',
-      loop:['Reads the live pipeline and scorecards','Finds the strongest verified matches','Suggests offer adjustments to improve acceptance odds','Screens pipelines. Generates assessment campaigns. Prepares offer communications.'],
+      loop:[
+        'Screens inbound candidate pool against calibrated company role benchmarks',
+        'Eliminates unverified claims with 7-layer anti-cheat proctored telemetry',
+        'Ranks qualified talent with transparent decision scorecards and compensation fit',
+        'Automates calibrated technical assessments and delivers shortlists to hiring managers'
+      ],
       script:[
-        { r:'user', t:'Fill our backend role with verified candidates.' },
-        { r:'ai', step:0, t:'Reading the live pipeline and scorecards.', src:['Pipeline','Scorecards'], delay:800 },
-        { r:'ai', step:1, t:'Found the <strong>strongest verified matches</strong> for this role.', delay:800 },
-        { r:'ai', step:2, t:'I suggest an offer adjustment to improve acceptance odds.', delay:800 },
-        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('users')}Pipeline screened<span class="pill done">Done</span></div></div>` },
-        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('send')}Assessment campaign + offer communication<span class="pill">Prepared</span></div></div>` }
+        { r:'user', t:'We need 5 Senior Backend Engineers by next Friday. Screen applicants and filter out unverified resumes.' },
+        { r:'ai', step:0, t:'Scanning 184 inbound applicants against your tech stack using 7-layer proctor telemetry and code playback.', src:['184 Inbound Applicants','Anti-Cheat Telemetry','Golang/K8s Calibration'], delay:600 },
+        { r:'ai', step:1, t:'Filtered out 112 unverified or flagged profiles. Identified <strong>14 top-tier engineers</strong> with 90%+ code execution fidelity.', delay:650 },
+        { r:'ai', step:2, t:'Generated ranked candidate scorecards with explained decision factors and pre-scheduled 1-click technical round invites.', delay:700 },
+        { r:'card', step:3, html:`<div class="acard"><div class="acard-h">${ic('users')}Verified Engineering Shortlist<span class="pill done">14 Ranked</span></div><div class="arow"><span>Candidate A · 96% Match (Trust 98)</span><b style="color:var(--ok)">Instant Hire</b></div><div class="arow"><span>Candidate B · 92% Match (Trust 95)</span><b>Interview</b></div></div>` },
+        { r:'card', html:`<div class="acard"><div class="acard-h">${ic('send')}Calibrated Technical Screening<span class="pill done">Dispatched</span></div><div class="arow"><span>14 Proctored invites delivered</span><b>Track Pipeline</b></div></div>` }
       ] }
   ];
   const steps = $$('#loop .lstep');
   function setLoopStep(s) {
     steps.forEach((el, i) => { el.classList.toggle('on', i === s || (s === 99 && i === 3)); el.classList.toggle('past', s === 99 ? i < 3 : i < s); });
   }
-  const agPlayer = createPlayer($('#agChat'), { onStep: setLoopStep, gap: 5500 });
+  const agPlayer = createPlayer($('#agChat'), { onStep: setLoopStep, gap: 2000 });
   tabs($('#roleTabs'), '.rtab', k => {
     const R = ROLES[k]; $('#agRoleLabel').textContent = R.label;
     steps.forEach((el, i) => $('p', el).textContent = R.loop[i]);
